@@ -5,7 +5,7 @@ import { GETDATA, POSTDATA, SIDEDATA, SINGLEDELETE, SINGLEGET } from "./blogpost
 export const getblogs=(search)=>async(dispatch)=>{
     //console.log("calling")
     try{
-        let response=await axios.get('http://localhost:8080/post'+search)
+        let response=await axios.get('https://blogbackend-yfc2.onrender.com/post'+search)
         console.log(response.data)
         dispatch({type:GETDATA,payload:response.data})
     }
@@ -18,7 +18,7 @@ export const postblog=(creds)=>async(dispatch)=>{
     let token=localStorage.getItem("token")
   try{
 
-        let response=await axios.post('http://localhost:8080/post',creds,{
+        let response=await axios.post('https://blogbackend-yfc2.onrender.com/post',creds,{
             headers:{
                 "authorization":token
             }
@@ -36,7 +36,7 @@ export const deleteblog=(id)=>async(dispatch)=>{
     let token=localStorage.getItem("token")
     try{
 
-        let response=await axios.delete(`http://localhost:8080/post/${id}`,{
+        let response=await axios.delete(`https://blogbackend-yfc2.onrender.com/post/${id}`,{
             headers:{
                 "authorization":token
             }
@@ -54,7 +54,7 @@ export const updateblog=(data)=>async(dispatch)=>{
     let token=localStorage.getItem("token")
     try{
 
-        let response=await axios.put(`http://localhost:8080/post/${data.id}`,{title:data.title,desc:data.desc},{
+        let response=await axios.put(`https://blogbackend-yfc2.onrender.com/${data.id}`,{title:data.title,desc:data.desc},{
             headers:{
                 "authorization":token
             }
@@ -71,7 +71,7 @@ export const updateblog=(data)=>async(dispatch)=>{
 export const category=()=>async(dispatch)=>{
     //console.log("calling")
     try{
-        let response=await axios.get('http://localhost:8080/post')
+        let response=await axios.get('https://blogbackend-yfc2.onrender.com/post')
         console.log(response.data)
         dispatch({type:SIDEDATA,payload:response.data})
     }
@@ -86,7 +86,7 @@ console.log(e.message)
 export const singleblog=(id)=>async(dispatch)=>{
 
     try{
-        let response=await axios.get(`http://localhost:8080/post/${id}`)
+        let response=await axios.get(`https://blogbackend-yfc2.onrender.com/post/${id}`)
         console.log("action",response.data)
         dispatch({type:SINGLEGET,payload:response.data})
 

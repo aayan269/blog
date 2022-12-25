@@ -4,7 +4,7 @@ import { DELETE, GET, LOGIN_SUCCESS, LOGOUT, SIGNUP_SUCCESS } from './auth.types
 export const Signup=(creds)=>async(dispatch)=>{
 
     try{
-        let response=await axios.post('http://localhost:8080/users/signup',creds)
+        let response=await axios.post('https://blogbackend-yfc2.onrender.com/users/signup',creds)
         console.log(response.data)
         dispatch({type:SIGNUP_SUCCESS,payload:response.data})
     }
@@ -15,7 +15,7 @@ export const Signup=(creds)=>async(dispatch)=>{
 
 export const login=(creds)=>async(dispatch)=>{
     try{
-        let response=await axios.post('http://localhost:8080/users/login',creds)
+        let response=await axios.post('https://blogbackend-yfc2.onrender.com/users/login',creds)
         console.log(response.data)
         dispatch({type:LOGIN_SUCCESS,payload:response.data.token})
     }catch(e){
@@ -30,7 +30,7 @@ export const updateUser=(data)=>async(dispatch)=>{
     console.log(id,"check",creds,token)
     try{
 
-        let response=await axios.put(`http://localhost:8080/users/${id}`,{creds},{
+        let response=await axios.put(`https://blogbackend-yfc2.onrender.com/users/${id}`,{creds},{
             headers:{
                 "authorization":token
             }
@@ -53,7 +53,7 @@ export const deleteUser=(id)=>async(dispatch)=>{
    
     try{
 
-        let response=await axios.delete(`http://localhost:8080/users/${id}`,{
+        let response=await axios.delete(`https://blogbackend-yfc2.onrender.com/users/${id}`,{
             headers:{
                 "authorization":token
             }
@@ -71,7 +71,7 @@ export const getUsers=()=>async(dispatch)=>{
     let token=localStorage.getItem("token")
 
     try{
-        let response=await axios.get(`http://localhost:8080/users/`,{
+        let response=await axios.get(`https://blogbackend-yfc2.onrender.com/users/`,{
             headers:{
                 "authorization":token
             }
