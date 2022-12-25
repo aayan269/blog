@@ -89,7 +89,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/">Home</MenuItem>
         <MenuItem to="/post/:id"> My Blog</MenuItem>
         <MenuItem to="/write"> Create Blog </MenuItem>
-        <MenuItem to="/settings"> <img style={{width:"40px",height:"40px",borderRadius:"50%",objectFit:"cover"}} src={decoded?("http://localhost:8080/images/"+(decoded.profilePic)+(".jpeg")):("https://cdn.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.webp")}  /> </MenuItem>
+        <MenuItem to="/settings"> <img style={{width:"40px",height:"40px",borderRadius:"50%",objectFit:"cover"}} src={decoded?("https://blogbackend-yfc2.onrender.com/images/"+(decoded.profilePic)+(".jpeg")):("https://cdn.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.webp")}  /> </MenuItem>
         <MenuItem to="/login" isLast>
           <Button
             size="sm"

@@ -5,7 +5,7 @@ export default function Post({post}) {
   //console.log("http://localhost:8080/images/"+(post.photo)+(".jpeg"));
   return (
     <div className='post'>
-<img className='postImg' src= {("http://localhost:8080/images/"+(post.photo)+(".jpeg")) || ("http://localhost:8080/images/"+(post.photo)+(".png"))}        />
+<img className='postImg' src= {("https://blogbackend-yfc2.onrender.com/images/"+(post.photo)+(".jpeg")) || ("https://blogbackend-yfc2.onrender.com/images/"+(post.photo)+(".png"))}        />
    <div className='postInfo'>
     <div className='postcats'>
         <span className='postcat'>{post.category}</span>

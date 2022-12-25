@@ -56,7 +56,7 @@ const postUpdate=()=>{
         {data.photo && (
  <img
  className="singlePostImg"
- src={"http://localhost:8080/images/"+(data.photo)+(".jpeg")}
+ src={"https://blogbackend-yfc2.onrender.com/images/"+(data.photo)+(".jpeg")}
  alt=""
 />
         )}
